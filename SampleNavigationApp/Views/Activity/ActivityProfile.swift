@@ -10,7 +10,6 @@ import SwiftUI
 import Resolver
 
 struct ActivityProfile: View {
-//	private var navigation: NavigationCoordinator = Resolver.resolve(name: "activities navigation")
 	@EnvironmentObject var navigation: NavigationStack
 	
 	var body: some View {

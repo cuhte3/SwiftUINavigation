@@ -7,17 +7,16 @@
 //
 
 import SwiftUI
-import Resolver
 
 struct DashboardView: View {
-	private var navigation: NavigationCoordinator = Resolver.resolve()
+	@EnvironmentObject var navigation: NavigationStack
 
 	var body: some View {
 		VStack {
 			HStack {
 				Spacer()
 				Button(action: {
-					self.navigation.pop(to: .landing)
+					self.navigation.popToRoot()
 				}) {
 					Text("Logout")
 				}

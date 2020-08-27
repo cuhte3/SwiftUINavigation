@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import Resolver
 
 struct ActivitiesRoot: View {
-	let navigationStack = NavigationStackView<ActivitiesView>(rootView: { ActivitiesView() })
+	let navigationStack = NavigationStackView<ActivitiesView>(configurator: ActivityConfigurator(), rootView: ActivitiesView())
 
 	var body: some View {
 		navigationStack
@@ -18,7 +17,7 @@ struct ActivitiesRoot: View {
 }
 
 struct ActivitiesView: View {
-	@EnvironmentObject var navStack: NavigationStack
+	@EnvironmentObject var navigation: NavigationStack
 		
 	var body: some View {
 		VStack {
@@ -26,7 +25,7 @@ struct ActivitiesView: View {
 			Text("Activities")
 			Spacer()
 			Button(action: {
-				self.navStack.push(ActivityLikes(), withId: .acivityLikes)
+				self.navigation.push(.acivityLikes)
 			}, label: {
 				Text("Next")
 			})

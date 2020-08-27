@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Resolver
 
 class UsernameViewModel {
 	init() {
@@ -19,8 +18,8 @@ class UsernameViewModel {
 }
 
 struct UsernameView: View {
-	private var navigation: NavigationCoordinator = Resolver.resolve()
 //	private var viewModel = UsernameViewModel()
+	@EnvironmentObject var navigation: NavigationStack
 
 	var body: some View {
 		VStack {

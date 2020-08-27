@@ -1,5 +1,5 @@
 //
-//  Nav.swift
+//  NavigationStack.swift
 //  KnowApp
 //
 //  Created by Edward Psyk on 3/31/20.
@@ -33,42 +33,34 @@ public enum PopDestination {
   case view(withId: Screen)
 }
 
-// MARK: ViewModel
-
 public class NavigationStack: ObservableObject {
-  var navigationType = NavigationType.push
-  /// Customizable easing to apply in pop and push transitions
+	var navigationType = NavigationType.push
   private let easing: Animation
+	private let configurator: NavigationConfigurator
   
-  init(easing: Animation) {
+	init(configurator: NavigationConfigurator, easing: Animation) {
+		self.configurator = configurator
     self.easing = easing
   }
   
   private var viewStack = ViewStack() {
     didSet {
-//			guard let destinationView = viewStack.peek() else { return }
       currentView = viewStack.peek()
     }
   }
   
   @Published var currentView: ViewElement?
 
-  
-  public func popToRoot() {
-    viewStack.popToRoot()
-  }
-  
-  public func push<Element: View>(_ element: Element, withId identifier: Screen, pushTransition: AnyTransition? = .none, popTransition: AnyTransition? = .none) {
-    if viewStack.peek()?.id != identifier {
-      withAnimation(easing) {
-        navigationType = .push
-        viewStack.push(ViewElement(id: identifier,
-                                   wrappedElement: AnyView(element), pushTransition: pushTransition, popTransition: popTransition))
-      }
-    }
-  }
-  
-  public func pop(to: PopDestination = .previous) {
+	func push(_ sceen: Screen) {
+		if let element = configurator.configure(sceen) {
+			withAnimation(easing) {
+				navigationType = .push
+				viewStack.push(element)
+			}
+		}
+	}
+	
+	func pop(to: PopDestination = .previous) {
     withAnimation(easing) {
       navigationType = .pop
       switch to {
@@ -80,6 +72,10 @@ public class NavigationStack: ObservableObject {
           viewStack.popToPrevious()
       }
     }
+  }
+	
+	func popToRoot() {
+    viewStack.popToRoot()
   }
   
   //the actual stack
@@ -93,7 +89,6 @@ public class NavigationStack: ObservableObject {
     mutating func push(_ element: ViewElement) {
       if indexForView(withId: element.id) != nil {
         self.popToView(withId: element.id)
-//        fatalError("Duplicated view identifier: \"\(element.id)\". You are trying to push a view with an identifier that already exists on the navigation stack.")
       }
       views.append(element)
     }
@@ -125,24 +120,21 @@ public class NavigationStack: ObservableObject {
 struct ViewElement: Identifiable, Equatable {
   let id: Screen
   let wrappedElement: AnyView
-  var pushTransition: AnyTransition
-  var popTransition: AnyTransition
-  
-  let pushTrans = AnyTransition.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
-  let popTrans = AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing))
-  
-  init(id: Screen, wrappedElement: AnyView, pushTransition: AnyTransition?, popTransition: AnyTransition?) {
+  let pushTransition: AnyTransition
+  let popTransition: AnyTransition
+    
+  init(id: Screen, wrappedElement: AnyView, pushTransition: AnyTransition? = nil, popTransition: AnyTransition? = nil) {
     self.id = id
     self.wrappedElement = wrappedElement
     if let push = pushTransition {
       self.pushTransition = push
     } else {
-      self.pushTransition = pushTrans
+			self.pushTransition = NavigationTransition.defaultTransitions.push
     }
     if let pop = popTransition {
       self.popTransition = pop
     } else {
-      self.popTransition = popTrans
+      self.popTransition = NavigationTransition.defaultTransitions.pop
     }
   }
   
@@ -151,49 +143,44 @@ struct ViewElement: Identifiable, Equatable {
   }
 }
 
-/// An alternative SwiftUI NavigationView implementing classic stack-based navigation giving also some more control on animations and programmatic navigation.
 public struct NavigationStackView<Root>: View where Root: View {
-    @ObservedObject private var navViewModel: NavigationStack
-    private let rootViewID = "root"
-    private let rootView: Root
-    private let transitions: (push: AnyTransition, pop: AnyTransition)
+	@ObservedObject private var navigationStack: NavigationStack
+	private let rootViewID = "Root"
+	private let rootView: Root
+	private let rootViewtransitions: (push: AnyTransition, pop: AnyTransition)
 
-    /// Creates a NavigationStackView.
-    /// - Parameters:
-    ///   - transitionType: The type of transition to apply between views in every push and pop operation.
-    ///   - easing: The easing function to apply to every push and pop operation.
-    ///   - rootView: The very first view in the NavigationStack.
-    public init(transitionType: NavigationTransition = .default, easing: Animation = .easeOut(duration: 0.2), @ViewBuilder rootView: () -> Root) {
-        self.rootView = rootView()
-        self.navViewModel = NavigationStack(easing: easing)
-        switch transitionType {
-        case .none:
-            self.transitions = (.identity, .identity)
-        case .custom(let trans):
-            self.transitions = (trans, trans)
-        default:
-            self.transitions = NavigationTransition.defaultTransitions
-        }
-    }
+	init(transitionType: NavigationTransition = .default, easing: Animation = .easeOut(duration: 0.2), configurator: NavigationConfigurator, rootView: Root) {
+		self.rootView = rootView
+		self.navigationStack = NavigationStack(configurator: configurator, easing: easing)
+		switch transitionType {
+		case .none:
+				self.rootViewtransitions = (.identity, .identity)
+		case .custom(let trans):
+				self.rootViewtransitions = (trans, trans)
+		default:
+				self.rootViewtransitions = NavigationTransition.defaultTransitions
+		}
+	}
 
-    public var body: some View {
-        let showRoot = navViewModel.currentView == nil
-        let navigationType = navViewModel.navigationType
-
-        return ZStack {
-            Group {
-                if showRoot {
-                    rootView
-                        .id(rootViewID)
-                        .transition(navigationType == .push ? transitions.push : transitions.pop)
-                        .environmentObject(navViewModel)
-                } else {
-                    navViewModel.currentView!.wrappedElement
-                        .id(navViewModel.currentView!.id)
-                        .transition(navigationType == .push ? transitions.push : transitions.pop)
-                        .environmentObject(navViewModel)
-                }
-            }
-        }
-    }
+	public var body: some View {
+		let showRoot = navigationStack.currentView == nil
+		let navigationType = navigationStack.navigationType
+		let currentView = navigationStack.currentView
+		let currentViewPushTransition = currentView?.pushTransition ?? NavigationTransition.defaultTransitions.push
+		let currentViewPopTransition = currentView?.popTransition ?? NavigationTransition.defaultTransitions.pop
+		
+		return ZStack {
+			if showRoot {
+				rootView
+					.id(rootViewID)
+					.transition(navigationType == .push ? rootViewtransitions.push : rootViewtransitions.pop)
+					.environmentObject(navigationStack)
+			} else {
+				currentView?.wrappedElement
+					.id(currentView!.id)
+					.transition(navigationType == .push ? currentViewPushTransition : currentViewPopTransition)
+					.environmentObject(navigationStack)
+			}
+		}
+	}
 }

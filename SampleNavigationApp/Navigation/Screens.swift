@@ -10,14 +10,15 @@ import Foundation
 
 public enum Screen: String {
 	//MARK: MainCoordinator
-  case landing = "Landing"
-  case usernameSignUp = "Username SignUp"
-  case phoneNumber = "Phone Number"
-  case verification = "Varification"
+  case landing = "Main.Landing"
+  case usernameSignUp = "Main.Username"
+  case phoneNumber = "Main.PhoneNumber"
+  case verification = "Main.Verification"
   case main = "Main"
-  case pop = "Go Back"
 	//MARK: DashboardCoordinator
 	case activities = "Activities"
-	case acivityLikes = "Activity Likes"
-	case activityProfile = "ActivityProfile"
+	case acivityLikes = "Activity.Likes"
+	case activityProfile = "Activity.Profile"
+	//MARK: FeedConfigurator
+	case feedEvent = "Feed.Event"
 }

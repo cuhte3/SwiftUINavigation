@@ -7,10 +7,14 @@
 //
 
 import SwiftUI
-import Resolver
 
 struct LandingView: View {
-	private var navigation: NavigationCoordinator = Resolver.resolve()
+	@EnvironmentObject var navigation: NavigationStack
+	private var isLoggedIn: Bool = true
+		
+	init() {
+		isLoggedIn = false
+	}
 	
 	var body: some View {
 		VStack {
@@ -22,6 +26,11 @@ struct LandingView: View {
 			}, label: {
 				Text("Next")
 			})
+		}
+		.onAppear {
+			if self.isLoggedIn {
+				self.navigation.push(.main)
+			}
 		}
 	}
 }

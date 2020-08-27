@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import Resolver
 
 struct CodeConfirmationView: View {
-	private var navigation: NavigationCoordinator = Resolver.resolve()
+	@EnvironmentObject var navigation: NavigationStack
 
 	var body: some View {
 		VStack {

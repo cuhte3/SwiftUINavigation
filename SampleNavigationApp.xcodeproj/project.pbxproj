@@ -15,7 +15,7 @@
 		755B604424F4168E0050E095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755B604224F4168D0050E095 /* LaunchScreen.storyboard */; };
 		755B604F24F4171D0050E095 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B604E24F4171D0050E095 /* LandingView.swift */; };
 		755B605124F41C090050E095 /* UsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B605024F41C090050E095 /* UsernameView.swift */; };
-		7573789B24F6947A00579939 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573789824F6947A00579939 /* MainCoordinator.swift */; };
+		7573789B24F6947A00579939 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573789824F6947A00579939 /* MainConfigurator.swift */; };
 		7573789C24F6947A00579939 /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573789924F6947A00579939 /* NavigationStack.swift */; };
 		7573789D24F6947A00579939 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573789A24F6947A00579939 /* RootView.swift */; };
 		7573789F24F6B19800579939 /* CodeConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573789E24F6B19800579939 /* CodeConfirmationView.swift */; };
@@ -23,13 +23,13 @@
 		757378A324F6B32600579939 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378A224F6B32600579939 /* DashboardView.swift */; };
 		757378A524F6B38200579939 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378A424F6B38200579939 /* ActivitiesView.swift */; };
 		757378A724F6B3A200579939 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378A624F6B3A200579939 /* FeedView.swift */; };
-		757378AA24F6D2CD00579939 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 757378A924F6D2CD00579939 /* Resolver */; };
-		757378AC24F6D2F700579939 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378AB24F6D2F700579939 /* AppDelegate+Injection.swift */; };
-		757378AF24F6E0FA00579939 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378AE24F6E0FA00579939 /* NavigationCoordinator.swift */; };
+		757378AF24F6E0FA00579939 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378AE24F6E0FA00579939 /* NavigationConfigurator.swift */; };
 		757378B424F6E16700579939 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378B324F6E16700579939 /* Screens.swift */; };
 		757378B624F6E2AD00579939 /* ActivityLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378B524F6E2AD00579939 /* ActivityLikes.swift */; };
 		757378B824F6E30200579939 /* ActivityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757378B724F6E30200579939 /* ActivityProfile.swift */; };
-		75E0872D24F6EB9800B77E85 /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0872C24F6EB9800B77E85 /* ActivitiesCoordinator.swift */; };
+		7584F31424F815E500C8B3A1 /* FeedConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7584F31324F815E500C8B3A1 /* FeedConfigurator.swift */; };
+		7584F31624F816D900C8B3A1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7584F31524F816D900C8B3A1 /* Event.swift */; };
+		75E0872D24F6EB9800B77E85 /* ActivityConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0872C24F6EB9800B77E85 /* ActivityConfigurator.swift */; };
 		75E0873024F6F71C00B77E85 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 75E0872F24F6F71C00B77E85 /* NavigationStack */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		755B604524F4168E0050E095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		755B604E24F4171D0050E095 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		755B605024F41C090050E095 /* UsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameView.swift; sourceTree = "<group>"; };
-		7573789824F6947A00579939 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		7573789824F6947A00579939 /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		7573789924F6947A00579939 /* NavigationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
 		7573789A24F6947A00579939 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7573789E24F6B19800579939 /* CodeConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeConfirmationView.swift; sourceTree = "<group>"; };
@@ -52,12 +52,13 @@
 		757378A224F6B32600579939 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		757378A424F6B38200579939 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		757378A624F6B3A200579939 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		757378AB24F6D2F700579939 /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
-		757378AE24F6E0FA00579939 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		757378AE24F6E0FA00579939 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		757378B324F6E16700579939 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		757378B524F6E2AD00579939 /* ActivityLikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLikes.swift; sourceTree = "<group>"; };
 		757378B724F6E30200579939 /* ActivityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProfile.swift; sourceTree = "<group>"; };
-		75E0872C24F6EB9800B77E85 /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
+		7584F31324F815E500C8B3A1 /* FeedConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedConfigurator.swift; sourceTree = "<group>"; };
+		7584F31524F816D900C8B3A1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		75E0872C24F6EB9800B77E85 /* ActivityConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757378AA24F6D2CD00579939 /* Resolver in Frameworks */,
 				75E0873024F6F71C00B77E85 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +76,6 @@
 		755B602B24F416890050E095 = {
 			isa = PBXGroup;
 			children = (
-				757378AB24F6D2F700579939 /* AppDelegate+Injection.swift */,
 				755B603624F416890050E095 /* SampleNavigationApp */,
 				755B603524F416890050E095 /* Products */,
 			);
@@ -117,13 +116,11 @@
 			isa = PBXGroup;
 			children = (
 				7573789A24F6947A00579939 /* RootView.swift */,
-				755B603B24F416890050E095 /* MainView.swift */,
-				757378A224F6B32600579939 /* DashboardView.swift */,
-				757378A624F6B3A200579939 /* FeedView.swift */,
 				755B604E24F4171D0050E095 /* LandingView.swift */,
-				755B605024F41C090050E095 /* UsernameView.swift */,
-				757378A024F6B1C400579939 /* PhoneNumberView.swift */,
-				7573789E24F6B19800579939 /* CodeConfirmationView.swift */,
+				755B603B24F416890050E095 /* MainView.swift */,
+				7584F31224F814F600C8B3A1 /* Dashboard */,
+				7584F31124F814ED00C8B3A1 /* Feed */,
+				7584F31024F814CD00C8B3A1 /* Login */,
 				757378B924F6E33900579939 /* Activity */,
 			);
 			path = Views;
@@ -132,18 +129,19 @@
 		757378B024F6E10200579939 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				757378AE24F6E0FA00579939 /* NavigationCoordinator.swift */,
+				757378AE24F6E0FA00579939 /* NavigationConfigurator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		757378B124F6E11600579939 /* NavigationCoordinators */ = {
+		757378B124F6E11600579939 /* NavigationCoonfigurators */ = {
 			isa = PBXGroup;
 			children = (
-				7573789824F6947A00579939 /* MainCoordinator.swift */,
-				75E0872C24F6EB9800B77E85 /* ActivitiesCoordinator.swift */,
+				7573789824F6947A00579939 /* MainConfigurator.swift */,
+				75E0872C24F6EB9800B77E85 /* ActivityConfigurator.swift */,
+				7584F31324F815E500C8B3A1 /* FeedConfigurator.swift */,
 			);
-			path = NavigationCoordinators;
+			path = NavigationCoonfigurators;
 			sourceTree = "<group>";
 		};
 		757378B224F6E14000579939 /* Navigation */ = {
@@ -151,7 +149,7 @@
 			children = (
 				757378B324F6E16700579939 /* Screens.swift */,
 				7573789924F6947A00579939 /* NavigationStack.swift */,
-				757378B124F6E11600579939 /* NavigationCoordinators */,
+				757378B124F6E11600579939 /* NavigationCoonfigurators */,
 				757378B024F6E10200579939 /* Protocols */,
 			);
 			path = Navigation;
@@ -165,6 +163,33 @@
 				757378B724F6E30200579939 /* ActivityProfile.swift */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		7584F31024F814CD00C8B3A1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				755B605024F41C090050E095 /* UsernameView.swift */,
+				757378A024F6B1C400579939 /* PhoneNumberView.swift */,
+				7573789E24F6B19800579939 /* CodeConfirmationView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7584F31124F814ED00C8B3A1 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				757378A624F6B3A200579939 /* FeedView.swift */,
+				7584F31524F816D900C8B3A1 /* Event.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		7584F31224F814F600C8B3A1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				757378A224F6B32600579939 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +209,6 @@
 			);
 			name = SampleNavigationApp;
 			packageProductDependencies = (
-				757378A924F6D2CD00579939 /* Resolver */,
 				75E0872F24F6F71C00B77E85 /* NavigationStack */,
 			);
 			productName = SampleNavigationApp;
@@ -216,7 +240,6 @@
 			);
 			mainGroup = 755B602B24F416890050E095;
 			packageReferences = (
-				757378A824F6D2CD00579939 /* XCRemoteSwiftPackageReference "Resolver" */,
 				75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = 755B603524F416890050E095 /* Products */;
@@ -247,13 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7573789D24F6947A00579939 /* RootView.swift in Sources */,
+				7584F31424F815E500C8B3A1 /* FeedConfigurator.swift in Sources */,
 				7573789C24F6947A00579939 /* NavigationStack.swift in Sources */,
 				755B603824F416890050E095 /* AppDelegate.swift in Sources */,
+				7584F31624F816D900C8B3A1 /* Event.swift in Sources */,
 				757378A524F6B38200579939 /* ActivitiesView.swift in Sources */,
 				757378B624F6E2AD00579939 /* ActivityLikes.swift in Sources */,
 				755B605124F41C090050E095 /* UsernameView.swift in Sources */,
 				757378B824F6E30200579939 /* ActivityProfile.swift in Sources */,
-				757378AC24F6D2F700579939 /* AppDelegate+Injection.swift in Sources */,
 				755B603A24F416890050E095 /* SceneDelegate.swift in Sources */,
 				755B603C24F416890050E095 /* MainView.swift in Sources */,
 				757378A324F6B32600579939 /* DashboardView.swift in Sources */,
@@ -261,9 +285,9 @@
 				7573789F24F6B19800579939 /* CodeConfirmationView.swift in Sources */,
 				757378B424F6E16700579939 /* Screens.swift in Sources */,
 				757378A724F6B3A200579939 /* FeedView.swift in Sources */,
-				75E0872D24F6EB9800B77E85 /* ActivitiesCoordinator.swift in Sources */,
-				7573789B24F6947A00579939 /* MainCoordinator.swift in Sources */,
-				757378AF24F6E0FA00579939 /* NavigationCoordinator.swift in Sources */,
+				75E0872D24F6EB9800B77E85 /* ActivityConfigurator.swift in Sources */,
+				7573789B24F6947A00579939 /* MainConfigurator.swift in Sources */,
+				757378AF24F6E0FA00579939 /* NavigationConfigurator.swift in Sources */,
 				755B604F24F4171D0050E095 /* LandingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,14 +484,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		757378A824F6D2CD00579939 /* XCRemoteSwiftPackageReference "Resolver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.4;
-			};
-		};
 		75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/biobeats/swiftui-navigation-stack.git";
@@ -479,11 +495,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		757378A924F6D2CD00579939 /* Resolver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 757378A824F6D2CD00579939 /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = Resolver;
-		};
 		75E0872F24F6F71C00B77E85 /* NavigationStack */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
