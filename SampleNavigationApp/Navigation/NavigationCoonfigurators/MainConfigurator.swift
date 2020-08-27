@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class MainConfigurator: NavigationConfigurator {
+struct MainConfigurator: NavigationConfigurator {
   func configure(_ screen: Screen) -> ViewElement? {
     switch screen {
       case .main:

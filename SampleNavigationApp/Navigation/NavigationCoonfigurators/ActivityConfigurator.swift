@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class ActivityConfigurator: ObservableObject, NavigationConfigurator {
+struct ActivityConfigurator: NavigationConfigurator {
 	func configure(_ screen: Screen) -> ViewElement? {
 		 switch screen {
 			case .acivityLikes:

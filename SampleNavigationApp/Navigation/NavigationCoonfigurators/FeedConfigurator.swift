@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class FeedConfigurator: ObservableObject, NavigationConfigurator {
+struct FeedConfigurator: NavigationConfigurator {
 	func configure(_ screen: Screen) -> ViewElement? {
 		 switch screen {
 			case .feedEvent:
