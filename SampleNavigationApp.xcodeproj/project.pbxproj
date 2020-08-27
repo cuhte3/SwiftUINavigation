@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,6 @@
 		7584F31424F815E500C8B3A1 /* FeedConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7584F31324F815E500C8B3A1 /* FeedConfigurator.swift */; };
 		7584F31624F816D900C8B3A1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7584F31524F816D900C8B3A1 /* Event.swift */; };
 		75E0872D24F6EB9800B77E85 /* ActivityConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0872C24F6EB9800B77E85 /* ActivityConfigurator.swift */; };
-		75E0873024F6F71C00B77E85 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 75E0872F24F6F71C00B77E85 /* NavigationStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E0873024F6F71C00B77E85 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +207,6 @@
 			);
 			name = SampleNavigationApp;
 			packageProductDependencies = (
-				75E0872F24F6F71C00B77E85 /* NavigationStack */,
 			);
 			productName = SampleNavigationApp;
 			productReference = 755B603424F416890050E095 /* SampleNavigationApp.app */;
@@ -240,7 +237,6 @@
 			);
 			mainGroup = 755B602B24F416890050E095;
 			packageReferences = (
-				75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = 755B603524F416890050E095 /* Products */;
 			projectDirPath = "";
@@ -482,25 +478,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/biobeats/swiftui-navigation-stack.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		75E0872F24F6F71C00B77E85 /* NavigationStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 75E0872E24F6F71C00B77E85 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
-			productName = NavigationStack;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 755B602C24F416890050E095 /* Project object */;
 }
